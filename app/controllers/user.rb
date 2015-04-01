@@ -1,3 +1,7 @@
+get '/users' do
+  erb :all_users
+end
+
 get '/login' do
   erb :'auth/login'
 end
