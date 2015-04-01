@@ -1,6 +1,16 @@
 <h2>Share your recipe with us!</h2>
 
-
+<form action="/new_recipe_ingredient" method="post">
+  <p>Add required ingredients:</p>
+  <select name="ingredient">
+        <option value="default">Choose</option>
+      <%Ingredient.all.each do |ingred|%>
+        <option value="<%=ingred.id%>"><%=ingred.name%></option>
+      <%end%>
+  </select>
+  <input type="text" placeholder="Quantity" name="quantity" />
+  <input type="submit" value="Add" />
+</form>
 
 <form action="#" method="post">
   <input type="text" placeholder="Title" name="title" /><br><br>
