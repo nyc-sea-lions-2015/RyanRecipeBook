@@ -9,3 +9,11 @@
 .top-bar{
   display: inline;
 }
+
+#user-table{
+  width: 20%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
