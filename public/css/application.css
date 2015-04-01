@@ -9,3 +9,11 @@
 .top-bar{
   display: inline;
 }
+
+#user-table{
+  border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

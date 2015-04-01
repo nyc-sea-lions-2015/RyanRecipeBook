@@ -1,0 +1,7 @@
+<h1>Contributors:</h1>
+<table id="user-table">
+  <tr><th>Name</th><th>Recipes</th></tr>
+  <%@users.each do |user|%>
+    <tr><td><%=user.name%></td><td><%=user.recipes.count%></td></tr>
+  <%end%>
+</table>

@@ -1,5 +1,6 @@
 get '/users' do
-  erb :all_users
+  @users = User.all
+  erb :'user/all_users'
 end
 
 get '/login' do
