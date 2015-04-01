@@ -1,0 +1,13 @@
+<h1><%=@cur_recipe.title%></h1>
+<p>by <a href="/user/<%=@cur_recipe.user.id%>"><%=@cur_recipe.user.name%></a></p>
+
+<h3>Ingredients:</h3>
+<table>
+  <tr><th>Name</th><th>Amount</th></tr>
+  <% @cur_recipe.recipe_ingredients.each do |rec_ing| %>
+    <tr><td><%=rec_ing.ingredient.name%></td><td><%=rec_ing.quantity%></td></tr>
+  <%end%>
+</table>
+
+<h3>Instructions:</h3>
+<p><%=@cur_recipe.instruction%></p>
