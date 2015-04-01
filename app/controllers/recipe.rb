@@ -19,12 +19,13 @@ end
 
 post '/recipe/new' do
   new_recipe = Recipe.new(title: params[:title],
-                          instruction: params[:instruction],
                           user_id: session[:user_id])
 
   if new_recipe.save
-    redirect "/user/#{current_user.id}"
+    redirect "/recipe/#{new_recipe.id}"
   else
     [404, "recipe did not save"]
   end
 end
+
+
