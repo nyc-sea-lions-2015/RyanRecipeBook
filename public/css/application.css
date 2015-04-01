@@ -17,3 +17,10 @@
 table, th, td {
     border: 1px solid black;
 }
+
+#index-recipes-list{
+  overflow: scroll;
+  height: 400px;
+  width: 40%;
+  border: solid black 2px;
+}
