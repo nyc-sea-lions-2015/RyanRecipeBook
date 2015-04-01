@@ -19,7 +19,19 @@
 </head>
 <body>
   <header>
-
+    <div class="top-bar">
+      <h1 class="top-bar">Recipe Book</h1>
+      <div id="right">
+        <%if current_user%>
+          <p class="f-right">User: <%=current_user.name%> </p>
+          <a class="f-right" href="/logout">Logout</a>
+        <%else%>
+          <a class="f-right" href="/login">Login</a>
+          <p class="f-right">||</p>
+          <a class="f-right" href="/signup">Sign Up</a>
+        <%end%>
+      </div>
+    </div>
   </header>
   <%= yield %>
 </body>
