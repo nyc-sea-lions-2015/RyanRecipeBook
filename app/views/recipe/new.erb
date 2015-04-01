@@ -2,20 +2,17 @@
 <div id="new-recipe">
   <div id="title-form">
     <form action="/recipe/new" method="post">
-      <input type="text" placeholder="Title" name="title" /><br><br>
+      <input type="text" placeholder="Title" name="title" /><br>
+      <label>Instructions:<br>
+      <textarea cols="100" rows="10" class="form-control" name="instruction"></textarea></label><br>
       <input type="submit" value="Create" />
     </form>
   </div>
 
   <div id="ingredient-form">
-
+    <a id="finished" href='/user/<%=current_user.id%>'>Finished</a>
   </div>
 
-  <div id="instruction-form">
-    <form id="instruction-button" action="" method="post">
-      <input type="submit" value="Add Instructions" />
-    </form>
-  </div>
 </div>
 
 

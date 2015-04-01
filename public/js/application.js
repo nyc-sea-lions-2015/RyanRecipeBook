@@ -1,9 +1,9 @@
 $(document).ready(function() {
+  $('#finished').toggle(false);
   $('#new-recipe').on('submit', '#title-form', function(event){
     event.preventDefault();
     var $target = $(event.target);
     $target.toggle(false);
-    $('#instruction-button').toggle(true);
 
     $.ajax({
       type: 'POST',
@@ -18,6 +18,7 @@ $(document).ready(function() {
     event.preventDefault();
     var $target = $(event.target);
     $('#add-ingredient-button').toggle(false);
+    $('#finished').toggle(true);
 
     $.ajax({
       type: 'POST',

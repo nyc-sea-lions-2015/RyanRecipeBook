@@ -26,5 +26,5 @@ table, th, td {
 }
 
 #instruction-button{
-  display: none;
+  display: "none";
 }

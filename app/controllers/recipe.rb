@@ -19,7 +19,8 @@ end
 
 post '/recipe/new' do
   @new_recipe = Recipe.new(title: params[:title],
-                          user_id: session[:user_id])
+                           instruction: params[:instruction],
+                           user_id: session[:user_id])
 
   if @new_recipe.save
     erb :'recipe/add_ingredient', layout: false, locals: {recipe: @new_recipe}
@@ -39,3 +40,7 @@ post '/recipe/:id/recipe_ingredient/new' do
     [404, "recipe_ingredient did not save"]
   end
 end
+
+
+
+
