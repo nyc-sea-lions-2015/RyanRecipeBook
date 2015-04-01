@@ -2,10 +2,11 @@
   <h3>New Recipes:</h3>
   <%recipe_list.each do |recipe| %>
     <dt>
-      <li><a href="/recipe/<%=recipe.id%>"><%=recipe.title%></a></li>
+      <li class="home-list"><a href="/recipe/<%=recipe.id%>"><%=recipe.title%></a></li>
       <dd>By <a href="/user/<%=recipe.user.id%>"><%=recipe.user.name%></a></dd>
     </dt>
   <%end%>
 </div>
+<br><br>
 
-<a href="/recipe/new">Create Recipe</a>
+<a style="margin-left:30px;" href="/recipe/new">Create Recipe</a>
