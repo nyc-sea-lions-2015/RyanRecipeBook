@@ -10,5 +10,5 @@ Ingredient.create(name: "tomato sauce")
 Ingredient.create(name: "chop meat")
 Ingredient.create(name: "dough")
 
-RecipeIngredient.create(recipe: chicken_parm, ingredient: Ingredient.find_by(name: "chicken"), quantity: 2)
-RecipeIngredient.create(recipe: chicken_parm, ingredient: Ingredient.find_by(name: "tomato sauce"), quantity: 1)
+RecipeIngredient.create(recipe: chicken_parm, ingredient: Ingredient.find_by(name: "chicken"), quantity: "2")
+RecipeIngredient.create(recipe: chicken_parm, ingredient: Ingredient.find_by(name: "tomato sauce"), quantity: "1")

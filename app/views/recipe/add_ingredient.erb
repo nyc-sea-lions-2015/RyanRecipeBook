@@ -1,0 +1,13 @@
+<div id="recipe-ingredient-form">
+  <form action="/recipe/<%=recipe.id%>/recipe_ingredient/new" method="post">
+    <p>Add required ingredients:</p>
+    <select name="ingredient">
+          <option value="default">Choose</option>
+        <%Ingredient.all.each do |ingred|%>
+          <option value="<%=ingred.id%>"><%=ingred.name%></option>
+        <%end%>
+    </select>
+    <input type="text" placeholder="Quantity" name="quantity" />
+    <input id="add-ingredient-button" type="submit" value="Add" />
+  </form>
+</div>
