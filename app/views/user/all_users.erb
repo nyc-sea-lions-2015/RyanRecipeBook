@@ -2,6 +2,6 @@
 <table id="user-table">
   <tr><th>Name</th><th>Recipes</th></tr>
   <%@users.each do |user|%>
-    <tr><td><%=user.name%></td><td><%=user.recipes.count%></td></tr>
+    <tr><td><a href="/user/<%=user.id%>"><%=user.name%></a></td><td><%=user.recipes.count%></td></tr>
   <%end%>
 </table>

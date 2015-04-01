@@ -3,6 +3,11 @@ get '/users' do
   erb :'user/all_users'
 end
 
+get '/user/:id' do
+  @cur_user = User.find_by(id: params[:id])
+  erb :'user/user'
+end
+
 get '/login' do
   erb :'auth/login'
 end
