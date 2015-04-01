@@ -1,0 +1,7 @@
+<h1>Our Recipes!</h1>
+
+<ol>
+  <% @recipes.each do |recipe| %>
+    <li><a href="#"><%=recipe.title%></a> author: <%=recipe.user.name%></li>
+  <%end%>
+</ol>
