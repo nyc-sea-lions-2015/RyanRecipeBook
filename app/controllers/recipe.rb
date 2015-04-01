@@ -18,14 +18,24 @@ get '/recipe/:id' do
 end
 
 post '/recipe/new' do
-  new_recipe = Recipe.new(title: params[:title],
+  @new_recipe = Recipe.new(title: params[:title],
                           user_id: session[:user_id])
 
-  if new_recipe.save
-    redirect "/recipe/#{new_recipe.id}"
+  if @new_recipe.save
+    erb :'recipe/add_ingredient', layout: false, locals: {recipe: @new_recipe}
   else
     [404, "recipe did not save"]
   end
 end
 
+post '/recipe/:id/recipe_ingredient/new' do
+  @new_recipe_ingredient = RecipeIngredient.new(quantity: params[:quantity],
+                                                recipe_id: params[:id],
+                                                ingredient_id: params[:ingredient])
 
+  if @new_recipe_ingredient.save
+    erb :'recipe/add_ingredient', layout: false, locals: {recipe: Recipe.find_by(id: params[:id])}
+  else
+    [404, "recipe_ingredient did not save"]
+  end
+end

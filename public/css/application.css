@@ -24,3 +24,7 @@ table, th, td {
   width: 40%;
   border: solid black 2px;
 }
+
+#instruction-button{
+  display: none;
+}
