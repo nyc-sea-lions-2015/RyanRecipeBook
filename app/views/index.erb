@@ -3,8 +3,8 @@
   <h3>New Recipes:</h3>
   <%recipe_list.each do |recipe| %>
     <dt>
-      <li><a href="#"><%=recipe.title%></a></li>
-      <dd>By <%=recipe.user.name%></dd>
+      <li><a href="/recipe/<%=recipe.id%>"><%=recipe.title%></a></li>
+      <dd>By <a href="/user/<%=recipe.user.id%>"><%=recipe.user.name%></a></dd>
     </dt>
   <%end%>
 </div>
