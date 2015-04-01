@@ -4,6 +4,7 @@ get '/recipes' do
 end
 
 get '/recipe/new' do
+  @ingredients = Ingredient.all
   if current_user
     erb :'recipe/new'
   else
@@ -16,3 +17,14 @@ get '/recipe/:id' do
   erb :'recipe/recipe'
 end
 
+post '/recipe/new' do
+  new_recipe = Recipe.new(title: params[:title],
+                          instruction: params[:instruction],
+                          user_id: session[:user_id])
+
+  if new_recipe.save
+    redirect "/user/#{current_user.id}"
+  else
+    [404, "recipe did not save"]
+  end
+end
