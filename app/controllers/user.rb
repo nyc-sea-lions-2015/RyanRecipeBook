@@ -6,7 +6,7 @@ get '/signup' do
   erb :'auth/signup'
 end
 
-post 'login' do
+post '/login' do
   user = User.find_by(name: params[:name])
 
   if user && user.authenticate(params[:password])
@@ -15,6 +15,16 @@ post 'login' do
   else
     session[:error] = "Login failed"
     redirect '/login'
+  end
+end
+
+post '/signup' do
+  new_user = User.new(name: params[:name],
+                      password: params[:password])
+  if new_user.save
+    redirect '/login'
+  else
+    [404, "user not created"]
   end
 end
 
