@@ -1,3 +1,4 @@
 get '/' do
-  erb :index, locals: {recipe_list: Recipe.all}
+  @recipes = Recipe.all
+  erb :index
 end

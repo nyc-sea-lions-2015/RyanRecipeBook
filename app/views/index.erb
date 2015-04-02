@@ -1,10 +1,8 @@
 <div id="index-recipes-list">
   <h3>New Recipes:</h3>
-  <%recipe_list.each do |recipe| %>
-    <dt>
-      <li class="home-list"><a href="/recipe/<%=recipe.id%>"><%=recipe.title%></a></li>
-      <dd>By <a href="/user/<%=recipe.user.id%>"><%=recipe.user.name%></a></dd>
-    </dt>
+  <%@recipes.each do |recipe| %>
+    <%= erb :_recipe locals: {recipe: recipe}  %>
+    <%# (common in Rails) erb :_recipe object: recipe  %>
   <%end%>
 </div>
 <br><br>

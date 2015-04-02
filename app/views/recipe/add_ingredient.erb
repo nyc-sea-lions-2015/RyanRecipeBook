@@ -3,7 +3,7 @@
     <p>Add required ingredients:</p>
     <select name="ingredient">
           <option value="default">Choose</option>
-        <%Ingredient.all.each do |ingred|%>
+        <%@ingredients.each do |ingred|%>
           <option value="<%=ingred.id%>"><%=ingred.name%></option>
         <%end%>
     </select>

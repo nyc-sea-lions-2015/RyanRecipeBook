@@ -18,6 +18,7 @@ get '/recipe/:id' do
 end
 
 post '/recipe/new' do
+  @ingredients = Ingredient.all
   @new_recipe = Recipe.new(title: params[:title],
                            instruction: params[:instruction],
                            user_id: session[:user_id])
@@ -30,6 +31,7 @@ post '/recipe/new' do
 end
 
 post '/recipe/:id/recipe_ingredient/new' do
+  @ingredients = Ingredient.all
   @new_recipe_ingredient = RecipeIngredient.new(quantity: params[:quantity],
                                                 recipe_id: params[:id],
                                                 ingredient_id: params[:ingredient])
